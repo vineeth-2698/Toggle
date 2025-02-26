@@ -1,0 +1,100 @@
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Container to center content */
+.container {
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/* Toggle switch container */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Toggle switch styling */
+.toggle-label {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    background: black;
+    border-radius: 50px;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Moon (🌙) and Sun (☀️) icons */
+.toggle-label::before {
+    content: '🌙';
+    position: absolute;
+    right: 10px;
+    font-size: 1.2em;
+    transition: opacity 0.3s;
+}
+
+.toggle-label::after {
+    content: '☀️';
+    position: absolute;
+    left: 10px;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Toggle circle */
+.toggle-label .toggle-icon {
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    transition: 0.3s;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* When toggle is checked */
+input[type="checkbox"]:checked + .toggle-label {
+    background: white;
+}
+
+input[type="checkbox"]:checked + .toggle-label::before {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + .toggle-label::after {
+    opacity: 1;
+}
+
+input[type="checkbox"]:checked + .toggle-label .toggle-icon {
+    left: 30px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: black;
+    color: white;
+}
